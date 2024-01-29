@@ -7,14 +7,11 @@
 const hre = require("hardhat");
 
 async function main() {
-  const deploy = hre.ethers.getContractFactory("FactoryMulisigWallet");
-  const contract = await deploy.deploy();
-  await contract.deployed();
-  console.log("FactoryMulisigWallet deployed to:", contract.address);
-  console.log(
-    "FactoryMulisigWallet deployed to:",
-    contract.deployTransaction.hash
+  const deploy = await hre.ethers.deployContract(
+    "contracts/FactoryMultisigWallet.sol:FactoryMultisigWallet"
   );
+  await deploy.waitForDeployment();
+  console.log("FactoryMulisigWallet deployed to:", deploy);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

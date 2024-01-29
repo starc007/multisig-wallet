@@ -18,7 +18,7 @@ contract FactoryMultisigWallet {
         address[] memory _walletOwners,
         uint256 _threshold
     ) public returns (address) {
-        MultiSig wallet = new MultiSig(_walletOwners, _threshold);
+        MultisigWallet wallet = new MultisigWallet(_walletOwners, _threshold);
         wallets.push(address(wallet));
         emit NewMultiSig(address(wallet), msg.sender);
         return address(wallet);
