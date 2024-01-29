@@ -1,13 +1,16 @@
-# Sample Hardhat Project
+# <p align="center">MultiSig Wallet</p>
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Every time you execute **_createMultiSigWallet_** it will create a new multisig wallet (deploy new contract)
 
-Try running some of the following tasks:
+- Params for **_createMultiSigWallet_** : 1. array of addresses (EOA) , 2. threshold(no of signatures required to execute a transaction)
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+## Contracts
+
+- `FactoryMultisigWallet` - use this contract to create new multisig wallets using `createMultiSigWallet` function
+- `MultisigWallet` contract contains all the functionalities required for a multisig wallet
+- Feature 3
+
+## 🛠️ Tech Stack
+
+- [Solidity](https://https://soliditylang.org/)
+- [Hardhat](https://hardhat.org/)
