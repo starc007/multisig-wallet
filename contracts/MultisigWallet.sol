@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract MultisigWallet {
+contract MultisigWallet is ReentrancyGuard {
     event Deposit(address indexed sender, uint amount, uint balance);
 
     event SubmitTransaction(

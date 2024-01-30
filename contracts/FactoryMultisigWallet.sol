@@ -4,7 +4,7 @@ pragma solidity ^0.8.19;
 import "@openzeppelin/contracts/access/Ownable2Step.sol";
 import "./MultisigWallet.sol";
 
-contract FactoryMultisigWallet {
+contract FactoryMultisigWallet is Ownable2Step {
     address[] public wallets;
 
     event NewMultiSig(address indexed wallet, address indexed owner);
